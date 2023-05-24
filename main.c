@@ -46,7 +46,7 @@ int main(int ss_argc, char *ss_argv[], char *envp[])
 		if (ss_checkerfunc(ssinfo->ss_cmd, SS_BUFF))
 			continue;
 		/* find path and tokenize */
-		ssinfo->ss_path = ss_findpathfun();
+		ssinfo->ss_path = ss_findpathfunc();
 		ssinfo->ss_paths = ss_tokenizerfunc(ssinfo->ss_path);
 		/*test_path(paths, command[0]);*/
 		ssinfo->ss_pathcmd = &(*ss_testpathfunc(ssinfo->ss_path, ssinfo->ss_cmd[0]));
