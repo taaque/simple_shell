@@ -23,12 +23,6 @@ int main(int ss_argc, char *ss_argv[], char *envp[])
 		ss_freebuffunc(ssinfo->ss_cmd);/* free ss_cmd, ss_paths and ss_pathcmd */
 		ss_freebuffunc(ssinfo->ss_paths);
 		free(ssinfo->ss_pathcmd);
-		SS_BUFF = (char *) malloc(BUFF_SIZE * sizeof(char));
-		if (SS_BUFF == NULL)
-		{
-			perror("unable to allocate buffer");
-			exit(0);
-		}
 		ss_promptfunc();/* display prompt and get input */
 		ss_linesize = getline(&SS_BUFF, &BUFF_SIZE, stdin);
 		if (ss_linesize < 0) /* check some conditions */
