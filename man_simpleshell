@@ -1,0 +1,57 @@
+"Simple_shell MANPAGE"
+.TH man 1 "25 May 2023" "Simple Shell"     "25 May 2023" "1.0"     "simple_shell MAnPPAGE"
+NAME Simple_Shell
+- UNIX_cmd_line_interpreter.
+
+.SYNOPSIS
+.B ./hsh [optns] [cmd_string | file]
+
+.DESCRIPTION
+.LP
+.B hsh
+cmd_lang_interpreter which reads_and_executes cmds from _stdin.>
+.LP
+
+.OVERVIEW
+shell executes cmds from terminal.
+
+.Invocation
+.B hsh
+invoked_by_cmd:
+
+.br
+.\&$ ./hsh
+        Prompt displayed for user to enter input and execute cmds.
+        Another option is use of pipe cmds via the pipe character '|'.
+.br
+\&$ echo "ALX" | ./hsh
+
+.COMPILATION:
+.br
+.B gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.br
+
+
+.INSTALLATION
+.install:
+.br
+.B git clone https://github.com/edhuva/simple_shell.git
+br
+
+.EXAMPLE
+$ ./hsh
+.br
+$ ls -l
+
+.SECOND OPTION
+sh(1)
+
+.HISTORY
+.B hsh
+Thompson_Shell_program AUTHOR Ken Thompson.
+
+.BUGS
+error Handler functions print message upon failure.
+
+.AUTHORS
+authors are Talent Takudzwa and Edwin Matema.
