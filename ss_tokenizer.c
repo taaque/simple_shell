@@ -15,47 +15,36 @@ char **ss_tokenizerfunc(char *ss_buff)
 	int ss_toksize = 1;
 	size_t ssindx = 0;
 	size_t ssflag = 0;
-
 	/*duplicate buffer*/
 	ssbuff = ss_strdup(ss_buff);
-	/*if buffer is true*/
-	if (!ssbuff)
+	if (!ssbuff)/*if buffer is true*/
 		return (NULL);
-	/*assign buffer input to ssbuffp*/
-	ssbuffp = ssbuff;
-
-	/*while bufferp is true*/
-	while (*ssbuffp)
+	ssbuffp = ssbuff;/*assign buffer input to ssbuffp*/
+	while (*ssbuffp)/*while bufferp is true*/
 	{
-		/*check delimeter*/
-		if (ss_strchr(ssdelim, *ssbuffp) != NULL && ssflag == 0)
+		if (ss_strchr(ssdelim, *ssbuffp) != NULL && ssflag == 0)/*check delimeter*/
 		{
-			/*increment tokenize variable*/
-			ss_toksize++;
+			ss_toksize++;/*increment tokenize variable*/
 			ssflag = 1;
 		}
 		else if (ss_strchr(ssdelim, *ssbuffp) == NULL && ssflag == 1)
 			ssflag = 0;
 		ssbuffp++;
 	}
-	/*allocate memory*/
-	ss_tokens = malloc(sizeof(char *) * (ss_toksize + 1));
-	/*tokenize*/
-	sstoken = strtok(ssbuff, ssdelim);
+	ss_tokens = malloc(sizeof(char *) * (ss_toksize + 1));/*allocate memory*/
+	sstoken = strtok(ssbuff, ssdelim);/*tokenize*/
 	while (sstoken)
 	{
 		ss_tokens[ssindx] = ss_strdup(sstoken);
 		if (ss_tokens[ssindx] == NULL)
 		{
-			/*free memory */
-			free(ss_tokens);
+			free(ss_tokens);/*free memory */
 			return (NULL);
 		}
 		sstoken = strtok(NULL, ssdelim);
 		ssindx++;
 	}
 	ss_tokens[ssindx] = '\0';
-	/*free buffer*/
-	free(ssbuff);
+	free(ssbuff);/*free buffer*/
 	return (ss_tokens);
 }

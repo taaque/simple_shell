@@ -57,11 +57,9 @@ int ss_strncmp(char *ss_str1, char *ss_str2, int k)
 {
 	int j;
 
-	/*for each character in str1 and str2*/
-	for (j = 0; ss_str1[j] && ss_str2[j] && j < k; j++)
+	for (j = 0; ss_str1[j] && ss_str2[j] && j < k; j++)/*for each ch str1 & str2*/
 	{
-		/*compare the string to a certain numberof bytes*/
-		if (ss_str1[j] != ss_str2[j])
+		if (ss_str1[j] != ss_str2[j])/*compare str to a certain num of bytes*/
 			return (ss_str1[j] - ss_str2[j]);
 	}
 	return (0);
@@ -75,10 +73,9 @@ int ss_strncmp(char *ss_str1, char *ss_str2, int k)
 int ss_strlen(char *ss_str)
 {
 	int cnt = 0;
-	/*while not end of string*/
-	while (*ss_str != '\0')
+
+	while (*ss_str != '\0')/*while not end of string*/
 	{
-		/*count*/
 		cnt++;
 		ss_str++;
 	}
