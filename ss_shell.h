@@ -34,12 +34,12 @@ extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 */
 typedef struct myss_info
 {
-        char *ss_pathcmd;
-        char *ss_path;
-        int ss_linecnt;
-        int ss_finalexit;
-        char **ss_cmd;
-        char **ss_paths;
+	char *ss_pathcmd;
+	char *ss_path;
+	int ss_linecnt;
+	int ss_finalexit;
+	char **ss_cmd;
+	char **ss_paths;
 } ss_info;
 
 /**
@@ -49,8 +49,8 @@ typedef struct myss_info
 */
 typedef struct myss_builtin
 {
-        char *ss_env;
-        char *ss_exit;
+	char *ss_env;
+	char *ss_exit;
 } ss_builtin;
 
 /**
@@ -59,7 +59,7 @@ typedef struct myss_builtin
 */
 struct myss_flags
 {
-        bool ss_interactive;
+	bool ss_interactive;
 } ss_flags;
 
 /*======ss_funcs=======*/
